@@ -21,7 +21,7 @@ services:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD:-misp}
       - MISP_ADMIN_EMAIL=${MISP_ADMIN_EMAIL:-admin@admin.test}
       - MISP_ADMIN_PASSPHRASE=${MISP_ADMIN_PASSPHRASE:-admin}
-      - MISP_BASEURL=${MISP_BASEURL:-https://10.10.10.30}
+      - MISP_BASEURL=${MISP_BASEURL:-https://10.10.10.30:5443}
       - POSTFIX_RELAY_HOST=${POSTFIX_RELAY_HOST:-relay.fqdn}
       - TIMEZONE=${TIMEZONE:-UTC}
     entrypoint: "wait-for-it.sh -t 0 -h ${MYSQL_HOST:-misp_db} -p 3306 -- /run.sh"
